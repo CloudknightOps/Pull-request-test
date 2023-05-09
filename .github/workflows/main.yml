@@ -52,8 +52,8 @@ jobs:
       - run: |
           git config --global user.email ci-bot@argocd.com && git config --global user.name ci-bot
           echo "cloning app repo"
-          git clone https://oauth2:${{ secrets.GH_PAT }}@github.com/${{ github.repository_owner }}/Dynamic-PR-test.git
-          cd Dynamic-PR-test 
+          git clone https://oauth2:${{ secrets.GH_PAT }}@github.com/${{ github.repository_owner }}/Pull-request-test.git
+          cd Pull-request-test
           echo "checkout source branch"
           git checkout ${{ github.event.pull_request.head.ref }}
           echo "updating image tag in values file"
