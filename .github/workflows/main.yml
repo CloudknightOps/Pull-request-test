@@ -44,7 +44,7 @@ jobs:
           context: .
           file: WebApp/Dockerfile
           push: true
-          tags: cloudopsknight/cloudknight:${{ steps.docker_tag.outputs.value }}
+          tags: cloudopsknight/cloudraiders:${{ steps.docker_tag.outputs.value }}
   update-image-tag-in-helm:
     runs-on: ubuntu-latest
     needs: docker-build-push
