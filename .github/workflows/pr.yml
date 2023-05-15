@@ -33,7 +33,7 @@ jobs:
           context: .
           file: src/Dockerfile
           push: true
-          tags: cloudopsknight/cloudknight:latest, cloudopsknight/cloudraiders:${{ github.sha }}
+          tags: cloudopsknight/cloudraiders:${{ github.sha }}
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -56,7 +56,7 @@ jobs:
 
     - name: Update Deployment YAML
       run: |
-        sed -i "s/image:.*$/image: cloudopsknight\/cloudknight:${{ steps.tag.outputs.tag }}/g" deploy/deployment.yml
+        sed -i "s/image:.*$/image: cloudopsknight/cloudraiders:${{ steps.tag.outputs.tag }}/g" deploy/deployment.yml
         cat deploy/deployment.yml
       env:
         github_token: ${{ secrets.GH_PAT }}
