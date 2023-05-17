@@ -56,7 +56,7 @@ jobs:
 
     - name: Update Deployment YAML
       run: |
-        sed -i "s/image:.*$/image: cloudopsknight/cloudraiders:${{ steps.tag.outputs.tag }}/g" deploy/deployment.yml
+        sed -i "s/image:.*$/image: cloudopsknight\/cloudraiders:${{ steps.tag.outputs.tag }}/g" deploy/deployment.yml
         cat deploy/deployment.yml
       env:
         github_token: ${{ secrets.GH_PAT }}
